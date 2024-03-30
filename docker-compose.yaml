@@ -1,0 +1,23 @@
+services:
+  dev-db:
+    image: postgres:latest
+    ports:
+      - 5455:5432
+    environment:
+      POSTGRES_DB: alfakhama
+      POSTGRES_USER: akram
+      POSTGRES_PASSWORD: admin
+    networks:
+      - alfakhamanet
+  test-db:
+    image: postgres:latest
+    ports:
+      - 5456:5432
+    environment:
+      POSTGRES_DB: alfakhama
+      POSTGRES_USER: akram
+      POSTGRES_PASSWORD: admin
+    networks:
+      - alfakhamanet
+networks:
+  alfakhamanet:
